@@ -43,3 +43,4 @@ config/environments/*.local.yml
 .secret
 
 config/database.yml
+db/schema.rb
