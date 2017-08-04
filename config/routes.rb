@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   resources :products
 
 
-  resources :tags
 
 
   resources :categories
@@ -36,6 +35,8 @@ Rails.application.routes.draw do
     resources :cities
     resources :audits, only: [:index, :show]
     resources :brands
+    resources :tags
+
 
   end
   # Users
