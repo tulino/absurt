@@ -2,14 +2,7 @@ require 'sidekiq/web'
 require 'sidekiq/cron/web'
 
 Rails.application.routes.draw do
-  get 'products/index'
-
-  get 'products/new'
-
-  get 'products/edit'
-
-  get 'products/show'
-
+ resources :products
   resources :categories
   Sidekiq::Web.use Rack::Auth::Basic do |username, password|
     username == Settings.sidekiq.username && password == Settings.sidekiq.password
