@@ -1,9 +1,13 @@
-class BrandsController < ApplicationController
+class Hq::BrandsController < Hq::ApplicationController
 
   before_action :get_brand, only: [:show, :edit, :update, :destroy]
 
   def index
     @brands = Brand.all
+
+    @search = Country.order(id: :desc).search(params[:q])
+    @countries = @search.result(distinct: true).paginate(page: params[:page])
+    respond_with(@countries)
   end
 
   def new
@@ -14,7 +18,7 @@ class BrandsController < ApplicationController
     @brand = Brand.new(brand_params)
 
     if @brand.save
-      redirect_to @brand
+      respond_with(:hq, @brand)
     else
       render 'new'
     end
@@ -28,7 +32,7 @@ class BrandsController < ApplicationController
     get_brand
 
     if @brand.update(brand_params)
-      redirect_to @brand
+      respond_with(:hq, @brand)
     else
       render 'edit'
     end
@@ -37,7 +41,7 @@ class BrandsController < ApplicationController
   def destroy
     get_brand
     @brand.destroy
-    redirect_to brands_path
+    redirect_to hq_brands_path
   end
 
   private
