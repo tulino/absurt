@@ -23,6 +23,20 @@ class TagsController < ApplicationController
 
   end
 
+  def edit
+    @tag = Tag.find(params[:id])
+  end
+
+  def update
+    @tag = Tag.find(params[:id])
+
+    if @tag.update(category_params)
+      redirect_to @tag
+    else
+      render 'edit'
+    end
+  end
+
   def destroy
     @tag = Tag.find(params[:id])
     @tag.destroy
