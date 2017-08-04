@@ -1,5 +1,5 @@
-<%= simple_form_for @product do |f| %>
-    <h4>Categoryler</h4>
+<%= simple_form_for [:hq, @product] do |f| %>
+    <h4>Kategoriler</h4>
     <%= select_tag(:category_id, options_for_select(@categories),:promtpt => 'Category') %>
     <p></p>
     <h4>Markalar</h4>

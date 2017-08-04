@@ -36,6 +36,7 @@ Rails.application.routes.draw do
     resources :cities
     resources :audits, only: [:index, :show]
     resources :brands
+    resources :products
 
   end
   # Users
