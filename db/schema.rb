@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170804135250) do
+ActiveRecord::Schema.define(version: 20170804161630) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,15 @@ ActiveRecord::Schema.define(version: 20170804135250) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "carts", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "product_id"
+    t.integer  "status"
+    t.integer  "total_price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -120,6 +129,8 @@ ActiveRecord::Schema.define(version: 20170804135250) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "carts", "products"
+  add_foreign_key "carts", "users"
   add_foreign_key "cities", "countries"
   add_foreign_key "products", "brands"
   add_foreign_key "products", "categories"
