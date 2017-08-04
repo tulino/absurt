@@ -2,7 +2,11 @@ require 'sidekiq/web'
 require 'sidekiq/cron/web'
 
 Rails.application.routes.draw do
+
+  resources :brands
+
   resources :categories
+
   Sidekiq::Web.use Rack::Auth::Basic do |username, password|
     username == Settings.sidekiq.username && password == Settings.sidekiq.password
   end if Rails.env.production?
