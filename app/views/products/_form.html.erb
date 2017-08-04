@@ -1,0 +1,25 @@
+<%= simple_form_for @product do |f| %>
+    <h4>Categoryler</h4>
+    <%= select_tag(:category_id, options_for_select(@categories),:promtpt => 'Category') %>
+    <p></p>
+    <h4>Markalar</h4>
+    <%= select_tag(:brand_id, options_for_select(@brands),:promtpt => 'Brand') %>
+    <p></p>
+    <p>
+      <%= f.input :name, label: "Ürün Adı " %>
+
+    </p>
+    <p>
+      <%= f.input :description, label: "Ürün Tanımı " %>
+
+    </p>
+    <p>
+      <%= f.input :price, label: "Ürün Fiyatı " %>
+
+
+    </p>
+
+    <p>
+      <%= f.button :submit %>
+    </p>
+<% end %>

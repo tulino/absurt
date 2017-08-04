@@ -1,0 +1,16 @@
+
+<div>
+  <h3>Ürün Adı: <%= @product.name%></h3>
+  <h3>Tanımı: <%= @product.description%></h3>
+  <h3>Ürün Fiyatı: <%= @product.price%></h3>
+</div>
+<div>
+  <h4>Category: <%= @product.category.name %></h4>
+</div>
+
+<div>
+  <h4>Marka: <%= @product.brand.name %></h4>
+</div>
+<%= link_to "Geriye Dön",products_path %>
+<%= link_to "Düzenle", edit_product_path(@product) %>
+<%= link_to "Sil",product_path(@product), method: :delete, data:{confirm: "Emin misiniz?"}%>

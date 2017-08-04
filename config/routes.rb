@@ -3,8 +3,12 @@ require 'sidekiq/cron/web'
 
 Rails.application.routes.draw do
 
+  resources :products
+
+
   resources :brands
   resources :tags
+
 
   resources :categories
 
