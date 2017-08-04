@@ -4,6 +4,7 @@ require 'sidekiq/cron/web'
 Rails.application.routes.draw do
 
   resources :brands
+  resources :tags
 
   resources :categories
 
