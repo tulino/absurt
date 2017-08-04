@@ -1,7 +1,7 @@
 <h2>Ürün Listesi</h2>
 <% @products.each do |product| %>
     <tr>
-      <h3> <td><%= link_to product.name, product_path(product) %></td></h3>
+      <h3> <td><%= link_to product.name, hq_product_path(product) %></td></h3>
     </tr>
 
 <% end %>

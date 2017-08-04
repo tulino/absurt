@@ -36,7 +36,7 @@ Rails.application.routes.draw do
     resources :audits, only: [:index, :show]
     resources :brands
     resources :tags
-
+    resources :products
 
   end
   # Users
