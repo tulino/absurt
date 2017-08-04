@@ -4,10 +4,6 @@ class Hq::BrandsController < Hq::ApplicationController
 
   def index
     @brands = Brand.all
-
-    @search = Country.order(id: :desc).search(params[:q])
-    @countries = @search.result(distinct: true).paginate(page: params[:page])
-    respond_with(@countries)
   end
 
   def new
