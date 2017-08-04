@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: brands
+# Table name: tags
 #
 #  id         :integer          not null, primary key
 #  name       :string
@@ -8,6 +8,5 @@
 #  updated_at :datetime         not null
 #
 
-class Brand < ActiveRecord::Base
-  has_many :products
+class Tag < ActiveRecord::Base
 end

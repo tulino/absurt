@@ -1,15 +1,16 @@
 # == Schema Information
 #
-# Table name: categories
+# Table name: cart_items
 #
 #  id         :integer          not null, primary key
-#  name       :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  cart_id    :integer
+#  product_id :integer
+#  created_at :datetime
+#  updated_at :datetime
 #
 
 require 'rails_helper'
 
-RSpec.describe Category, type: :model do
+RSpec.describe CartItem, type: :model do
   pending "add some examples to (or delete) #{__FILE__}"
 end

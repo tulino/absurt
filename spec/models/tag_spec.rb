@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: brands
+# Table name: tags
 #
 #  id         :integer          not null, primary key
 #  name       :string
@@ -8,6 +8,8 @@
 #  updated_at :datetime         not null
 #
 
-class Brand < ActiveRecord::Base
-  has_many :products
+require 'rails_helper'
+
+RSpec.describe Tag, type: :model do
+  pending "add some examples to (or delete) #{__FILE__}"
 end
