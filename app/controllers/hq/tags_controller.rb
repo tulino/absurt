@@ -1,7 +1,6 @@
-class TagsController < ApplicationController
+class Hq::TagsController < Hq::ApplicationController
 
-
-  def index
+def index
     @tags = Tag.all
   end
 
@@ -12,7 +11,7 @@ class TagsController < ApplicationController
   def create
     @tag = Tag.create(tag_params)
     if @tag.save
-      redirect_to @tag
+      respond_with(:hq, @tag)
     else
       render 'new'
     end
@@ -31,7 +30,7 @@ class TagsController < ApplicationController
     @tag = Tag.find(params[:id])
 
     if @tag.update(category_params)
-      redirect_to @tag
+      respond_with(:hq, @tag)
     else
       render 'edit'
     end
@@ -40,7 +39,7 @@ class TagsController < ApplicationController
   def destroy
     @tag = Tag.find(params[:id])
     @tag.destroy
-    redirect_to tags_path, notice: "Post Deleted"
+    redirect_to hq_tags_path, notice: "Post Deleted"
   end
 
   private

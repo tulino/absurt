@@ -6,8 +6,6 @@ Rails.application.routes.draw do
   resources :products
 
 
-  resources :brands
-  resources :tags
 
 
   resources :categories
@@ -36,6 +34,11 @@ Rails.application.routes.draw do
     resources :countries
     resources :cities
     resources :audits, only: [:index, :show]
+    resources :brands
+    resources :tags
+    resources :products
+    resources :categories
+
   end
   # Users
   devise_for :users, controllers: { sessions: 'user/sessions', registrations: 'user/registrations', passwords: 'user/passwords' }, path: 'user',

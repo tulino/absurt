@@ -1,4 +1,4 @@
-class ProductsController < ApplicationController
+class Hq::ProductsController < Hq::ApplicationController
   def index
     @products = Product.all
   end
@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
     @product.category_id = params[:category_id]
     @product.brand_id = params[:brand_id]
     if @product.save
-      redirect_to @product
+      respond_with(:hq, @product)
     else
       render 'new'
     end
@@ -33,7 +33,8 @@ class ProductsController < ApplicationController
     @product.category_id = params[:category_id]
     @product.brand_id = params[:brand_id]
     if @product.update(product_params)
-      redirect_to product_path(@product)
+      respond_with(:hq, @product)
+      #redirect_to product_path(@product)
     else
       render 'edit'
     end
@@ -41,7 +42,7 @@ class ProductsController < ApplicationController
   def destroy
     @product = Product.find(params[:id])
     if @product.destroy
-      redirect_to @product
+      respond_with(:hq, @product)
     else
       render 'index'
     end

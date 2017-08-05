@@ -32,5 +32,25 @@
         =link_to hq_cities_path do
           %i.fa.fa-database
           = t('activerecord.models.cities')
+      %li
+        =link_to hq_brands_path do
+          %i.fa.fa-database
+          = t('activerecord.models.brands')
+      %li
+        =link_to hq_products_path do
+          %i.fa.fa-database
+          = t('activerecord.models.products')
+
+      %li
+        =link_to hq_tags_path do
+          %i.fa.fa-database
+          = t('activerecord.models.tags')
+
+      %li
+        =link_to hq_categories_path do
+          %i.fa.fa-database
+          = t('activerecord.models.categories')
+
+
 
 #beaker{data: {toggle: 'tooltip'}, title: 'Made by lab2023'}

@@ -4,7 +4,6 @@
 #
 #  id          :integer          not null, primary key
 #  user_id     :integer
-#  product_id  :integer
 #  status      :integer
 #  total_price :integer
 #  created_at  :datetime
