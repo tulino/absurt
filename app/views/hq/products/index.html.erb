@@ -1,4 +1,5 @@
 <h2>Ürün Listesi</h2>
+<%= link_to 'Yeni ürün', new_hq_product_path %><br><br><br>
 <% @products.each do |product| %>
     <tr>
       <h3> <td><%= link_to product.name, hq_product_path(product) %></td></h3>
