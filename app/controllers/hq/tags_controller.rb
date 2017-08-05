@@ -1,6 +1,6 @@
 class Hq::TagsController < Hq::ApplicationController
 
-  def index
+def index
     @tags = Tag.all
   end
 
