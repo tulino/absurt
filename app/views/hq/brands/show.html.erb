@@ -2,6 +2,9 @@
   <strong>Title:</strong>
   <%= @brand.name %>
 </p>
+<% @products.each do |product| %>
+    <a href="<%= product_path(product) %>"><%= product.name %> </a><br>
+<% end %><br><br><br>
 
 
 

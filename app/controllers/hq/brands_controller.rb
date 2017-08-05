@@ -34,6 +34,11 @@ class Hq::BrandsController < Hq::ApplicationController
     end
   end
 
+  def show
+    get_brand
+    @products = @brand.products
+  end
+
   def destroy
     get_brand
     @brand.destroy

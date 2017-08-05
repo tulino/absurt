@@ -12,5 +12,5 @@
   <h4>Marka: <%= @product.brand.name %></h4>
 </div>
 <%= link_to "Geriye Dön",hq_products_path %>
-<%= link_to "Düzenle", edithq__product_path(@product) %>
+<%= link_to "Düzenle", edit_hq_product_path(@product) %>
 <%= link_to "Sil",hq_product_path(@product), method: :delete, data:{confirm: "Emin misiniz?"}%>
