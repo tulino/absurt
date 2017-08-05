@@ -1,4 +1,4 @@
-class CartsController < ApplicationController
+class User::CartsController < User:: ApplicationController
   before_action :get_cart, only: %i[show destroy]
 
   def create
