@@ -37,6 +37,7 @@ Rails.application.routes.draw do
     resources :brands
     resources :tags
     resources :products
+    resources :categories
 
   end
   # Users
