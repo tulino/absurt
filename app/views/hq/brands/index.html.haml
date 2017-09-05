@@ -1,0 +1,25 @@
+.panel.panel-info
+  .panel-heading
+    %i.fa.fa-table.icon-large
+    = t('brand_actions.list_brands')
+    .cont.btn-group
+
+      %a.refresh.btn{href: hq_brands_path, data: {toggle: 'toolbar-tooltip'}, title: t('view.reload')}
+        %i.fa.fa-refresh
+    .cont.badge= @brands.size
+
+  .panel-body
+    %table.table
+      %thead
+        %tr
+          %th
+            = t('activerecord.attributes.brand.id')
+          %th
+            = t('activerecord.attributes.brand.brand_name')
+          %th
+          %th
+            = t('activerecord.attributes.brand.created_at')
+
+          %th{:colspan => "4"}
+        %tbody
+          = render @brands

@@ -98,3 +98,10 @@ tr:
         new_password: Yeni parolanız
         confirmation: Yeni parola doğrulması
         button: Parolamı Değiştir
+  brand_actions:
+    Add_brand: Yeni Marka Ekle
+    list_brands: Markaları Listele
+    edit_brand: Marka Düzenleme
+    list_brand: Marka Listesi
+    new_band: Yeni Marka
+    brand_detail: Marka Detay

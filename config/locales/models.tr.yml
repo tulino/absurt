@@ -13,6 +13,7 @@ tr:
       cities: Şehirler
       audit: İşlem Geçmişi
       audits: İşlem Geçmişleri
+      brands: Markalar
     attributes:
       user:
         id: ID
@@ -85,3 +86,8 @@ tr:
         auditable_id: İşlem yapılan ID
         action: İşlem Türü
         created_at: Oluşturulma tarihi
+      brand:
+        id: Marka id
+        brand_name: Marka Adı
+        created_at: Oluşturulma tarih
+        updated_at: Güncelleme tarihi
